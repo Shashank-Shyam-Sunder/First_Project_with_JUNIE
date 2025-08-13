@@ -5,6 +5,49 @@ This project is a Python Quiz application with multiple interfaces:
 2. A command-line interface (CLI)
 3. A web-based user interface
 
+## Project Structure
+
+The project is organized into the following directories:
+
+```
+Project_with_JUNIE/
+├── api/                    # API-related files
+│   ├── main.py            # FastAPI application
+│   ├── models.py          # Data models
+│   ├── run_server.py      # API server runner
+│   └── README.md          # API documentation
+├── cli/                   # Command-line interface
+│   ├── python_quiz_chatbot.py  # CLI implementation
+│   └── README.md          # CLI documentation
+├── frontend/              # Web UI files
+│   ├── index.html         # Main HTML page
+│   ├── css/styles.css     # Styling
+│   ├── js/api.js          # API communication
+│   ├── js/app.js          # Frontend logic
+│   └── README.md          # Frontend documentation
+├── src/                   # Core source code
+│   └── launcher.py        # Main application launcher
+├── tests/                 # Test files
+│   ├── test_api.py        # API tests
+│   ├── test_imports.py    # Import verification tests
+│   ├── verify_app.py      # Application verification
+│   └── README.md          # Test documentation
+├── utils/                 # Utility files
+│   ├── run_ui.py          # Web UI server utility
+│   └── README.md          # Utilities documentation
+├── scripts/               # Batch files and scripts
+│   ├── run_app.bat        # Run API server
+│   ├── run_cli.bat        # Run CLI interface
+│   ├── run_ui.bat         # Run web UI
+│   ├── run_tests.bat      # Run tests
+│   └── setup_and_run.bat  # Setup and run application
+├── docs/                  # Documentation files
+│   ├── SUMMARY.md         # Project summary
+│   └── Project_structure.docx  # Detailed structure document
+├── requirements.txt       # Python dependencies
+└── README.md             # This file
+```
+
 ## Features
 
 - Get all available quiz questions
@@ -30,43 +73,55 @@ This project is a Python Quiz application with multiple interfaces:
 
 3. Run the application in one of the following modes:
 
+   Using the main launcher:
+   ```
+   python src/launcher.py [mode]
+   ```
+
+   Available modes:
+   - `api` - Start the API server only
+   - `ui` - Start the web UI (includes API server)
+   - `cli` - Start the command-line interface
+   - `test` - Run the API tests
+   - `verify` - Verify the application setup
+
    a. REST API only:
    ```
-   python run_server.py
+   python src/launcher.py api
    ```
 
    On Windows, you can use the provided batch file:
    ```
-   run_app.bat
+   scripts/run_app.bat
    ```
 
    For a complete setup that creates the virtual environment, installs dependencies, and runs the API:
    ```
-   setup_and_run.bat
-   ```
-
-   Alternatively, you can use uvicorn directly:
-   ```
-   uvicorn main:app --reload
+   scripts/setup_and_run.bat
    ```
 
    The API will be available at http://localhost:8000
 
    b. Command-line interface (CLI):
    ```
-   python python_quiz_chatbot.py
+   python src/launcher.py cli
+   ```
+
+   On Windows, you can use the provided batch file:
+   ```
+   scripts/run_cli.bat
    ```
 
    This will start an interactive quiz in the terminal.
 
    c. Web-based user interface:
    ```
-   python run_ui.py
+   python src/launcher.py ui
    ```
 
    On Windows, you can use the provided batch file:
    ```
-   run_ui.bat
+   scripts/run_ui.bat
    ```
 
    This will start both the API server and a web server for the frontend.
@@ -210,7 +265,7 @@ To use the CLI:
 
 1. Run the CLI script:
    ```
-   python python_quiz_chatbot.py
+   python src/launcher.py cli
    ```
 
 2. Follow the prompts to answer questions
@@ -231,11 +286,11 @@ To use the web UI:
 
 1. Run the application in web UI mode as described in the Installation section:
    ```
-   python run_ui.py
+   python src/launcher.py ui
    ```
    or
    ```
-   run_ui.bat
+   scripts/run_ui.bat
    ```
 
 2. Open your browser to http://localhost:8080
@@ -278,15 +333,15 @@ fetch(`http://localhost:8000/questions/1/answer`, {
 
 ## Testing
 
-To test the API endpoints, you can use the included test script:
+To test the API endpoints, you can use the launcher:
 
 ```bash
-python test_api.py
+python src/launcher.py test
 ```
 
 On Windows, you can use the provided batch file:
 ```
-run_tests.bat
+scripts/run_tests.bat
 ```
 
 This script will:

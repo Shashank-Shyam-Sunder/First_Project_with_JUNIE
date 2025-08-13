@@ -4,4 +4,5 @@ echo The API will be available at http://localhost:8000
 echo API documentation will be available at http://localhost:8000/docs
 echo Press Ctrl+C to stop the server
 echo.
-venv\Scripts\python main.py api
+cd ..
+.venv\Scripts\python src\launcher.py api

@@ -17,7 +17,7 @@ python python_quiz_chatbot.py
 Or from the root directory using the main entry point:
 
 ```bash
-python main.py cli
+python launcher.py cli
 ```
 
 ## Features

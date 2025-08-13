@@ -36,14 +36,13 @@ def open_browser():
     time.sleep(2)  # Wait for servers to start
     webbrowser.open('http://localhost:8080')
 
-if __name__ == "__main__":
+# ✅ ADD THIS FUNCTION
+def main():
     print("Starting Python Quiz Application in UI mode...")
-    
-    # Start the API server
     run_api_server()
-    
-    # Open the browser after a short delay
     threading.Thread(target=open_browser).start()
-    
-    # Run the frontend server (this will block until the server is stopped)
     run_frontend_server()
+
+# Run it normally when this is the main file
+if __name__ == "__main__":
+    main()

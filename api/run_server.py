@@ -1,4 +1,5 @@
 import uvicorn
+from api.main import app
 
 if __name__ == "__main__":
     print("Starting Python Quiz API server...")

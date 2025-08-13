@@ -19,7 +19,7 @@ python run_server.py
 Or from the root directory using the main entry point:
 
 ```bash
-python main.py api
+python launcher.py api
 ```
 
 ## API Endpoints

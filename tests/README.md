@@ -19,13 +19,13 @@ python test_api.py
 Or from the root directory using the main entry point:
 
 ```bash
-python main.py test
+python launcher.py test
 ```
 
 To verify the application setup:
 
 ```bash
-python main.py verify
+python launcher.py verify
 ```
 
 ## Notes

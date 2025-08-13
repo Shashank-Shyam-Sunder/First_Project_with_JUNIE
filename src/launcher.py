@@ -16,7 +16,7 @@ def print_usage():
     print("Python Quiz Application")
     print("======================")
     print("Usage:")
-    print("  python main.py [mode]")
+    print("  python launcher.py [mode]")
     print()
     print("Available modes:")
     print("  api     - Start the API server only")
@@ -40,26 +40,32 @@ def main():
     # Execute the appropriate mode
     if mode == "api":
         print("Starting API server mode...")
+        sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         from api import run_server
         # The run_server module will handle execution
 
     elif mode == "ui":
         print("Starting Web UI mode...")
+        sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         from utils import run_ui
         # The run_ui module will handle execution
+        run_ui.main()  # ✅ Now it calls the logic explicitly
 
     elif mode == "cli":
         print("Starting command-line interface mode...")
+        sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         from cli import python_quiz_chatbot
         python_quiz_chatbot.main()
 
     elif mode == "test":
         print("Running API tests...")
+        sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         from tests import test_api
         test_api.run_all_tests()
 
     elif mode == "verify":
         print("Verifying application setup...")
+        sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         from tests import verify_app
         # The verify_app module will handle execution
 
