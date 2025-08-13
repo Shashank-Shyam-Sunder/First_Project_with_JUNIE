@@ -10,7 +10,7 @@ This project is a Python Quiz application with multiple interfaces:
 The project is organized into the following directories:
 
 ```
-Project_with_JUNIE/
+Simple-Python-Quiz-Application/
 ├── api/                    # API-related files
 │   ├── main.py            # FastAPI application
 │   ├── models.py          # Data models
@@ -44,9 +44,23 @@ Project_with_JUNIE/
 ├── docs/                  # Documentation files
 │   ├── SUMMARY.md         # Project summary
 │   └── Project_structure.docx  # Detailed structure document
+├── .junie/                # JUNIE AI agent configuration
+│   └── guidelines.md      # Project guidelines for JUNIE
 ├── requirements.txt       # Python dependencies
 └── README.md             # This file
 ```
+
+## About This Project
+
+This project was created using **JUNIE Vibe Coding Agent**, an AI-powered development assistant that helps structure and organize code projects efficiently.
+
+### .junie Folder
+
+The `.junie/` folder contains configuration and guidelines for the JUNIE AI agent:
+
+- `guidelines.md`: Contains project-specific instructions and guidelines for JUNIE to follow when working on this project. This file helps maintain consistency in code style, project structure, and development practices.
+
+This folder is included in the repository to ensure that any future development with JUNIE follows the same standards and approaches established during the initial project creation.
 
 ## Features
 
